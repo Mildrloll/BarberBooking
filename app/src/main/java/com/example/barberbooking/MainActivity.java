@@ -96,21 +96,10 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         } else {
-            setContentView(R.layout.activity_main);
-            ButterKnife.bind(MainActivity.this);
+            skipLoginJustGoHome();
+//            setContentView(R.layout.activity_main);
+//            ButterKnife.bind(MainActivity.this);
         }
-        btn_login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                loginUser();
-            }
-        });
-        txt_skip.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                skipLoginJustGoHome();
-            }
-        });
     }
 
     private void checkUserFromFirebase(FirebaseUser user) {
