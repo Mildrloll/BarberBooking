@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -95,10 +96,21 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         } else {
-            skipLoginJustGoHome();
-//            setContentView(R.layout.activity_main);
-//            ButterKnife.bind(MainActivity.this);
+            setContentView(R.layout.activity_main);
+            ButterKnife.bind(MainActivity.this);
         }
+        btn_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                loginUser();
+            }
+        });
+        txt_skip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                skipLoginJustGoHome();
+            }
+        });
     }
 
     private void checkUserFromFirebase(FirebaseUser user) {
