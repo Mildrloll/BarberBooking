@@ -95,8 +95,9 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         } else {
-            setContentView(R.layout.activity_main);
-            ButterKnife.bind(MainActivity.this);
+            skipLoginJustGoHome();
+//            setContentView(R.layout.activity_main);
+//            ButterKnife.bind(MainActivity.this);
         }
     }
 
